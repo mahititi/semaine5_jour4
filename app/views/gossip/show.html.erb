@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+  <div class="card-body text-center mb-3" style="width: 20rem;">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <h5 class="card-title"><%=@goss.anonymous_gossiper%></h5>
+      <p class="card-text"><%= @goss.content %></p>
+      <h6 class="card-subtitle mb-2 text-muted">Added: <%=@gossip.created_at.strftime("%B %d, %Y")%></h6>
+      <%= link_to 'Edit', edit_gossip_path(@gossip),class: "btn btn-primary" %>
+      <%= link_to 'Back', gossips_path, class: "btn btn-primary"%>
+  </div>
+</div>

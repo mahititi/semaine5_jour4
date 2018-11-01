@@ -1,0 +1,23 @@
+<h1>New Gossip</h1>
+<% if false %>
+<%= render 'form', gossip: @gossip %>
+
+<%= link_to 'Back', gossips_path %>
+<% end %>
+<%= form_for @gossip, url: {action: "create"} do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :title %>:
+      <%= f.text_field :title, class: "form-control", placeholder: "My awesome title" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :"Username" %>:
+      <%= f.text_field :anonymous_gossiper, class: "form-control", placeholder: "My awesome username"%>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :content %>
+      <%= f.text_field :content, class: "form-control", placeholder: "My awesome content" %>
+    </div>
+  </div>
+  <%= f.submit "Create", class: "btn btn-primary" %>
+  <% end %>
