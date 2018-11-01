@@ -1,0 +1,21 @@
+<h1>Editing Gossip</h1>
+
+
+<% if false %>
+<%= link_to 'Show', @goss %> |
+<%= link_to 'Back', gossips_path %>i
+<% end %>
+<%= form_for @goss, url: {action: "update"} do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :"Username" %>
+      <%= f.text_field :anonymous_gossiper, class: "form-control", placeholder:  @goss.anonymous_gossiper %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :content %>
+      <%= f.text_field :content, class: "form-control", placeholder: @goss.content %>
+    </div>
+  </div>
+    <%= f.submit "Edit", class: "btn btn-primary" %>
+    <%= link_to 'Back', gossips_path, class: "btn btn-primary"%>
+  <% end %>
